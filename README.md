@@ -1,9 +1,7 @@
-
-#Demo
 Hello!
 This is repo for TIUE files!
 
-##Subheader
+## Subheader
 Have a look to files in repo.
 
-Changes have been made in local machine.
+Changes have been made in local Macbook Pro.
