@@ -380,3 +380,121 @@
 # print(f"The price of item {item1.name} is {item1.calculate_total_price()}")
 # print(f"The price of item {item2.name} is {item2.calculate_total_price()}")
 
+#---------------------------------# Applying discount method
+# class Item:
+#     pay_rate = 0.8                                                          # adding local for the class variable
+#     def __init__(self,name: str,price: float, quantity=0):
+        
+#         # Assign to self object
+#         self.name = name 
+#         self.price = price
+#         self.quantity = quantity
+#     def calculate_total_price(self): # function inside class calls method
+#         return self.price * self.quantity
+
+#     def apply_discount (self):                                              #Creating discount method
+#         self.price = self.price * Item.pay_rate
+
+# item1 = Item(1,100,5) # adding atributes 
+# # item2 = Item("Laptop",1000,3) # adding atributes 
+# item1.apply_discount()
+# print(item1.price)
+
+# # print(Item.pay_rate)                                                          # accessing class atribute (class level)
+# # print(item1.pay_rate)                                                           # accessing class variable thought instanse
+
+#---------------------------------# Applying different discount method to utem2 instance
+# class Item:
+#     pay_rate = 0.8                                                          # adding local for the class variable
+#     def __init__(self,name: str,price: float, quantity=0):
+        
+#         # Assign to self object
+#         self.name = name 
+#         self.price = price
+#         self.quantity = quantity
+#     def calculate_total_price(self): # function inside class calls method
+#         return self.price * self.quantity
+
+#     def apply_discount (self):                                              #Creating discount method
+#         # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
+#         self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+
+# item1 = Item(1,100,5) # adding atributes 
+# item1.apply_discount()
+# print(item1.price)
+
+# item2 = Item("Laptop",1000,3) # adding atributes                            
+# item2.pay_rate = 0.7                                                          # # Applying different discount method to utem2 instance 
+# item2.apply_discount()
+# print(item2.price)
+
+#---------------------------------# Creating instances in a list
+# class Item:
+#     all = []                                                                # creating list for all instances
+#     pay_rate = 0.8                                                          
+#     def __init__(self,name: str,price: float, quantity=0):
+        
+#         # Assign to self object
+#         self.name = name 
+#         self.price = price
+#         self.quantity = quantity
+
+#         Item.all.append(self)                                               # Adding all instanses to the list <all>
+
+#     def calculate_total_price(self): # function inside class calls method
+#         return self.price * self.quantity
+
+#     def apply_discount (self):                                              #Creating discount method
+#         # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
+#         self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+#                                                                             # Adding new instances 
+#     def __repr__(self):
+#         return f"Item('{self.name}', {self.price}, {self.quantity})"        #Outputing elelments in the list of instances 
+    
+# item1 = Item("Phone", 100, 1)
+# item2 = Item("Laptop", 1000, 3)
+# item3 = Item("Cable", 10, 5)
+# item4 = Item("Mouse", 50, 5)
+# item5 = Item("Keyboard", 75, 5)
+
+# print(Item.all)
+
+#---------------------------------# Creating instances in a CSV file
+import csv                                                                  # in order to use csv file we need to import csv library 
+class Item:
+    all = []                                                                # creating list for all instances
+    pay_rate = 0.8                                                          
+    def __init__(self,name: str,price: float, quantity=0):
+        
+        # Assign to self object
+        self.name = name 
+        self.price = price
+        self.quantity = quantity
+
+        Item.all.append(self)                                               # Adding all instanses to the list <all>
+
+    def calculate_total_price(self): # function inside class calls method
+        return self.price * self.quantity
+
+    def apply_discount (self):                                              #Creating discount method
+        # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
+        self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+                                                                            # Adding new instances 
+    @classmethod
+    def instantiate_form_csv(cls):                              #creating methos to open and read from csv file
+        with open('items.csv', 'r') as f:                           # openning csv file with read mode and saving data to the <f> file
+            reader = csv.DictReader(f)                                  # openning csv file in dictionary 
+            items = list(reader) 
+
+    # DEMOSTRATION OF LIST CONTENT 
+        for item in items:
+            print(item)
+
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity})"        #Outputing elelments in the list of instances 
+    
+Item.instantiate_form_csv()
+
+
+
+print(Item.all)
