@@ -460,41 +460,54 @@
 # print(Item.all)
 
 #---------------------------------# Creating instances in a CSV file
-import csv                                                                  # in order to use csv file we need to import csv library 
-class Item:
-    all = []                                                                # creating list for all instances
-    pay_rate = 0.8                                                          
-    def __init__(self,name: str,price: float, quantity=0):
+# import csv                                                                  # in order to use csv file we need to import csv library 
+# class Item:
+#     all = []                                                                # creating list for all instances
+#     pay_rate = 0.8                                                          
+#     def __init__(self,name: str,price: float, quantity=0):
         
-        # Assign to self object
-        self.name = name 
-        self.price = price
-        self.quantity = quantity
+#         # Assign to self object
+#         self.name = name 
+#         self.price = price
+#         self.quantity = quantity
 
-        Item.all.append(self)                                               # Adding all instanses to the list <all>
+#         Item.all.append(self)                                               # Adding all instanses to the list <all>
 
-    def calculate_total_price(self): # function inside class calls method
-        return self.price * self.quantity
+#     def calculate_total_price(self): # function inside class calls method
+#         return self.price * self.quantity
 
-    def apply_discount (self):                                              #Creating discount method
-        # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
-        self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
-                                                                            # Adding new instances 
-    @classmethod
-    def instantiate_form_csv(cls):                              #creating methos to open and read from csv file
-        with open('items.csv', 'r') as f:                           # openning csv file with read mode and saving data to the <f> file
-            reader = csv.DictReader(f)                                  # openning csv file in dictionary 
-            items = list(reader) 
+#     def apply_discount (self):                                              #Creating discount method
+#         # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
+#         self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+#                                                                             # Adding new instances 
+#     @classmethod
+#     def instantiate_form_csv(cls):                              #creating methos to open and read from csv file
+#         with open('items.csv', 'r') as f:                           # openning csv file with read mode and saving data to the <f> file
+#             reader = csv.DictReader(f)                                  # openning csv file in dictionary 
+#             items = list(reader) 
 
-    # DEMOSTRATION OF LIST CONTENT 
-        for item in items:
-            print(item)
+#     # DEMOSTRATION OF LIST CONTENT 
+#         for item in items:
+#             print(item)
 
-    def __repr__(self):
-        return f"Item('{self.name}', {self.price}, {self.quantity})"        #Outputing elelments in the list of instances 
+#     def __repr__(self):
+#         return f"Item('{self.name}', {self.price}, {self.quantity})"        #Outputing elelments in the list of instances 
     
-Item.instantiate_form_csv()
+# Item.instantiate_form_csv()
 
 
 
-print(Item.all)
+# print(Item.all)
+
+
+
+
+
+fam = ['liz',0,'jahn',67,'micke',34]
+name = 'usmanov', 'sarvar'
+name = 'usmanov sarvar'
+
+
+print(len(fam)) #-->  6
+print(len(name)) #--> 2
+
