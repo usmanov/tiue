@@ -38,14 +38,14 @@
 
 # Проблема ? 
 
-fam = ['Sarvar', 23, 'Usman', 89, 'Mazida', 90]
-name = 'Usmon'
-name2 = {'Usmon','balalal'}
+# fam = ['Sarvar', 23, 'Usman', 89, 'Mazida', 90]
+# name = 'Usmon'
+# name2 = {'Usmon','balalal'}
 
-print(len(fam))   #--> 6
-print(len(name))   #--> 5
-print(len(name2))   #--> 
+# print(len(fam))   #--> 6
+# print(len(name))   #--> 5
+# print(len(name2))   #--> 
 
-print(type(fam))   #--> 6
-print(type(name))   #--> 5
-print(type(name2))   #--> 
+# print(type(fam))   #--> 6
+# print(type(name))   #--> 5
+# print(type(name2))   #--> 
