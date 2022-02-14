@@ -82,3 +82,342 @@
 
 # ----------------------------------------------------------------------------------------------------------------------------
 
+# class Student:
+
+#     def __init__(self,m1,m2,m3) -> None:
+#         self.m1 = m1
+#         self.m2 = m2
+#         self.m3 = m3
+
+#     def avr(self):
+#         return (self.m1+self.m2+self.m3)/3
+
+# s1 = Student(34,67,32)
+# s2 = Student(89,33,12)
+
+# print(s1.avr())
+
+# ----------------------------------------------------------------------------------------------------------------------------
+# class Student:
+#     school = 'TIUE'
+
+#     @classmethod
+#     def info(cls):
+#         return cls.school
+
+# s1 = Student()
+
+# print(Student.info())
+
+# ----------------------------------------------------------------------------------------------------------------------------
+
+# class Student:
+#     school = "TIUE"
+
+#     def info(): # instatnt variable
+#         print("This is the class")
+
+# Student.info()
+
+# ----------------------------------------------------------------------------------------------------------------------------
+
+# class Student:
+#     def __init__(self,name,rolno) -> None:
+#         self.name = name
+#         self.rolno = rolno 
+#     def show(self):
+#         print(self.name, self.rolno)
+    
+#     class Laptop:
+
+#         def __init__(self) -> None:
+#             self.brand = 'HP'
+#             self.cpu = 'i5'
+#             self.ram = 8
+
+
+# s1 = Student("Sarvar",2)
+
+# print(s1.name,s1.rolno)  # inconvinient
+# s1.show() # --> sarvar 2
+
+# lap1 = Student.Laptop()
+# print(lap1.brand,lap1.cpu,lap1.ram)
+
+# ----------------------------------------------------------------------------------------------------------------------------
+
+# class Student:
+#     def __init__(self,name,rolno) -> None:
+#         self.name = name
+#         self.rolno = rolno
+#         self.lap = self.Laptop()
+
+#     def show(self):
+#         print(self.name, self.rolno)
+#         self.lap.show()
+
+#     class Laptop:
+
+#         def __init__(self) -> None:
+#             self.brand = 'HP'
+#             self.cpu = 'i5'
+#             self.ram = 8
+        
+
+#         def show (self):
+#             print(self.brand, self.cpu, self.ram)
+
+# s1 = Student("Sarvar",2)
+
+# # print(s1.name,s1.rolno)  # inconvinient
+# s1.show() # --> sarvar 2
+
+# # lap1 = Student.Laptop()
+# # print(lap1.brand,lap1.cpu,lap1.ram)
+
+# --------------------------------------------------------INharitance--------------------------------------------------------------------
+
+# class A:
+#     def feature1(self):
+#         print("feature 1 working")
+
+#     def feature2(self):
+#         print("feature 2 working")
+
+# a1 = A()
+
+# a1.feature1()
+# a1.feature2()
+
+# class B(A):                         # A is a Super or Parent class, B is sub or child class 
+#     def feature3(self):
+#         print("feature 3 working")
+
+#     def feature4(self):
+#         print("feature 4 working")
+
+# b1 = B()
+
+# b1.feature1()
+# b1.feature2()
+# b1.feature3()
+# b1.feature4()
+
+# class C(B):
+#     def feature5(self):
+#         print("feature 5 working")
+
+# c1 = C()
+
+# c1.feature1()
+# c1.feature5()
+
+# --------------------------------------------------------INharitance (2)--------------------------------------------------------------------
+
+# class A:
+#     def feature1(self):
+#         print("feature 1 working")
+
+#     def feature2(self):
+#         print("feature 2 working")
+
+# a1 = A()
+
+# # a1.feature1()
+# # a1.feature2()
+
+# class B:                         
+#     def feature3(self):
+#         print("feature 3 working")
+
+#     def feature4(self):
+#         print("feature 4 working")
+
+# b1 = B()
+
+# # b1.feature3()
+# # b1.feature4()
+
+# class C(A,B):                                 # A and B is a Super or Parent classes, C is sub or child class 
+#     def feature5(self):
+#         print("feature 5 working")
+
+# c1 = C()
+
+# c1.feature1()
+# c1.feature5()
+
+# --------------------------------------------------------INharitance (3)--------------------------------------------------------------------
+
+# class A:
+
+#     def __init__(self) -> None:
+#         print("inside A init")
+
+# class B(A):  
+#     pass
+
+
+# # a1 = A()
+# # a1            # --> inside A init
+
+# a1 = B()
+# a1              # --> inside B init
+# --------------------------------------------------------INharitance (3)--------------------------------------------------------------------
+
+# class A:
+
+#     def __init__(self) -> None:
+#         print("inside A init")
+
+# class B(A):  
+
+#     def __init__(self) -> None:
+#         print("inside B  init")
+
+
+# # a1 = A()
+# # a1            # --> inside A init
+
+# a1 = B()
+# a1              # --> inside B init
+
+# # --------------------------------------------------------INharitance (4) super --------------------------------------------------------------------
+
+# class A:
+
+#     def __init__(self):
+#         print("inside A init")
+
+# class B(A):  
+
+#     def __init__(self):
+#         super().__init__()              #  you can access all the features of the parent class
+#         print("inside B  init")
+
+
+# # a1 = A()
+# # a1            # --> inside A init
+
+# a1 = B()
+# a1              # --> inside A init inside B init
+
+# --------------------------------------------------------INharitance (4) super --------------------------------------------------------------------
+
+# class A:
+
+#     def __init__(self):
+#         print("inside A init")
+
+# class B:  
+
+#     def __init__(self):
+#         super().__init__()              #  you can access all the features of the parent class
+#         print("inside B  init")
+
+# class C(A,B):
+
+#     def __init__(self):
+#         super().__init__()
+#         # print("Inside C init")
+# a1 = C()
+# a1              # --> inside A init inside B init
+
+# --------------------------------------------------------INharitance (6) --------------------------------------------------------------------
+
+# class A:
+
+#     def __init__(self):
+#         print("inside A init")
+#     def feature1(self):
+#         print("feature 1-A working")
+
+# class B:  
+
+#     def __init__(self):
+#         super().__init__()              #  you can access all the features of the parent class
+#         print("inside B  init")
+    
+#     def feature1(self):
+#         print("feature 1-B working")
+
+# class C(A,B):
+
+#     def __init__(self):
+#         super().__init__()
+#         # print("Inside C init")
+# a1 = C()
+# a1.feature1()              # --> feature 1-A working
+
+# --------------------------------------------------------INharitance (7) super --------------------------------------------------------------------
+
+# class A:
+
+#     def __init__(self):
+#         print("inside A init")
+#     def feature1(self):
+#         print("feature 1-A working")
+
+# class B:  
+
+#     def __init__(self):
+#         super().__init__()              #  you can access all the features of the parent class
+#         print("inside B  init")
+    
+#     def feature2(self):
+#         print("feature 1-B working")
+
+# class C(A,B):
+
+#     def __init__(self):
+#         super().__init__()
+#         # print("Inside C init")
+    
+#     def feat(self):
+#         super().feature2()
+# a1 = C()
+# a1.feat()                       # --> feature 1-B working     
+
+# -------------------------------------------------------- Polymorphisim --------------------------------------------------------------------
+# Duck typing
+# Operator overloding
+# Method Overloading
+# Method Overridding
+
+# # -------------------------------------------------------- Duck typing --------------------------------------------------------------------
+# class VSC:
+
+#     def execute(self):
+#         print("Compiling")
+#         print("Running")
+# class Laptop:
+
+#     def code(self, ide):
+#         ide.execute()
+    
+# ide = VSC()
+
+# lap1 = Laptop()
+# lap1.code(ide)
+
+# -------------------------------------------------------- Duck typing (2) --------------------------------------------------------------------
+# class VSC:
+
+#     def execute(self):
+#         print("Compiling")
+#         print("Running")
+
+# class MyIDE:
+#     def execute(self):
+#         print("Spell check")
+#         print("Compiling")
+#         print("Running")
+# class Laptop:
+
+#     def code(self, ide):
+#         ide.execute()
+    
+# ide = MyIDE()
+
+# lap1 = Laptop()
+# lap1.code(ide)
