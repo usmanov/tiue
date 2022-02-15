@@ -412,6 +412,7 @@
 #         print("Spell check")
 #         print("Compiling")
 #         print("Running")
+
 # class Laptop:
 
 #     def code(self, ide):
@@ -421,3 +422,110 @@
 
 # lap1 = Laptop()
 # lap1.code(ide)
+
+# -------------------------------------------------------- Operator overloding --------------------------------------------------------------------
+# a = 4
+# b = 2
+
+# print(a+b)
+# print(int.__add__(a,b))
+
+# a = '4'
+# b = '2'
+
+# print(a+b)
+# print(str.__add__(a,b)) # that moment you add a plus operator it calls the __add__ method the moment you put a minus operator it will call a __sub__
+                        # method the moment you use a star simple which is multiplication it will call __mult__ method so we have different methods
+
+# class Student:
+#     def __init__(self,m1,m2):
+#         self.m1 = m1
+#         self.m2 = m2
+    
+#     def __add__(self,other):
+#         m1 = self.m1 + other.m1
+#         m2 = self.m2 + other.m2
+#         s3 = Student(m1,m2)
+
+#         return s3
+    
+#     def __str__(self):
+#         return self.m1, self.m2
+
+
+# s1 = Student(58,69)
+# s2 = Student(60,65)
+
+# s3 = s1 + s2
+# print(s3)               # actually we ar using __str__ method <__main__.Student object at 0x109067610>
+# print(s1.__str__())       # --> <__main__.Student object at 0x109067610>
+
+# -------------------------------------------------------- Operator overloding (1) --------------------------------------------------------------------
+
+# class Student:
+
+#     def __init__(self):
+#         pass
+
+#     def sum(self,a,b):
+#         s = a+b
+#         return s
+
+# s1 = Student()
+
+# print(s1.sum(4,5))
+
+# -------------------------------------------------------- Operator overloding (2) --------------------------------------------------------------------
+
+# class Student:
+
+#     def __init__(self):
+#         pass
+
+#     def sum(self,a=None,b=None,c=None):
+#         s = 0
+#         if a!=None and b!=None and c!=None:
+#             s = a+b+c
+#         elif a!=None and b!=None:
+#             s = a+b
+#         else:
+#             s = a
+#         return s
+
+# s1 = Student()
+
+# print(s1.sum(4))
+
+# -------------------------------------------------------- Operator overidding --------------------------------------------------------------------
+
+# class A:
+#     def show(self):
+#         print("in A show")
+
+# class B:
+#     pass
+
+# a1 = A()
+# a1.show() # --> in A show
+
+# a1 = B()
+# a1.show()  # --> AttributeError: 'B' object has no attribute 'show'
+
+# class A:
+#     def show(self):
+#         print("in A show")
+# class B(A):
+#     pass
+
+# a1 = B()
+# a1.show() # --> in A show
+
+# class A:
+#     def show(self):
+#         print("in A show")
+# class B:
+#     def show(self):
+#         print("in B show")
+
+# a1 = B()
+# a1.show() # --> in B show
