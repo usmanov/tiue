@@ -1,30 +1,31 @@
-# class Computer:
-    #stuff can be only Atributes (variables) and Behaviour (Methods)
-    #what every has?
-
+# class Computer (object):
+#     #define atrributes here
+#     # stuff can be only Atributes (variables) and Behaviour (Methods)
+#     # what every has?
+#
 #     def __init__(self,cpu,ram):
 #         # print("in init")
 #         # pass
 #         self.cpu = cpu
 #         self.ram = ram
-
+#
 #     def config (self):
 #         print("Configuration is:",self.cpu, self.ram)
-
+#
 # comp1 = Computer('i5',16)
 # comp2 = Computer('Razer 3',8)
-
+#
 # a = "Hello"
 # print(type(a))      # --> <class 'str'>
-# print(type(comp))  # --> <class '__main__.Computer'>
+# print(type(comp1))  # --> <class '__main__.Computer'>
 
 # When you want to use a method you need to call first the class name of the class which consist of the method
-# what will happen if we run this command ?
+# # what will happen if we run this command ?
 # Computer.config(comp1) # --> i5, 16gb, 1TB
 # # Computer.config() # -->  Computer.config() missing 1 required positional argument: 'self
 # Computer.config(comp2)
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 # Computer.config() # -->  Computer.config() missing 1 required positional argument: 'self
 
 # comp1.config() #in this case you are using the object itself to call the function
@@ -59,7 +60,7 @@
 # c2.age = 23
 # c1.compare(c2)
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # class car:
 #     wheels = 4              # class variable
@@ -80,7 +81,7 @@
 # # print(c1.com, c1.mil,c1.wheels)  # --> BWM 20 4
 # print(c2.com, c2.mil,c2.wheels)  # --> BWM 10 4
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # class Student:
 
@@ -97,7 +98,7 @@
 
 # print(s1.avr())
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 # class Student:
 #     school = 'TIUE'
 
@@ -109,7 +110,7 @@
 
 # print(Student.info())
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # class Student:
 #     school = "TIUE"
@@ -119,7 +120,7 @@
 
 # Student.info()
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # class Student:
 #     def __init__(self,name,rolno) -> None:
@@ -144,7 +145,7 @@
 # lap1 = Student.Laptop()
 # print(lap1.brand,lap1.cpu,lap1.ram)
 
-# ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # class Student:
 #     def __init__(self,name,rolno) -> None:
@@ -175,7 +176,7 @@
 # # lap1 = Student.Laptop()
 # # print(lap1.brand,lap1.cpu,lap1.ram)
 
-# --------------------------------------------------------INharitance--------------------------------------------------------------------
+# --------------------------------------------------------Inharitance--------------------------------------------------
 
 # class A:
 #     def feature1(self):
@@ -212,31 +213,31 @@
 # c1.feature1()
 # c1.feature5()
 
-# --------------------------------------------------------INharitance (2)--------------------------------------------------------------------
+# --------------------------------------------------------Inharitance (2)----------------------------------------------
 
 # class A:
 #     def feature1(self):
 #         print("feature 1 working")
-
+#
 #     def feature2(self):
 #         print("feature 2 working")
-
+#
 # a1 = A()
-
+#
 # # a1.feature1()
 # # a1.feature2()
-
-# class B:                         
+#
+# class B:
 #     def feature3(self):
 #         print("feature 3 working")
-
+#
 #     def feature4(self):
 #         print("feature 4 working")
-
+#
 # b1 = B()
 
-# # b1.feature3()
-# # b1.feature4()
+# b1.feature3()
+# b1.feature4()
 
 # class C(A,B):                                 # A and B is a Super or Parent classes, C is sub or child class 
 #     def feature5(self):
@@ -247,23 +248,23 @@
 # c1.feature1()
 # c1.feature5()
 
-# --------------------------------------------------------INharitance (3)--------------------------------------------------------------------
+# --------------------------------------------------------Inharitance (3)---------------------------------------------
 
 # class A:
-
+#
 #     def __init__(self) -> None:
 #         print("inside A init")
-
-# class B(A):  
+#
+# class B(A):
 #     pass
 
 
-# # a1 = A()
-# # a1            # --> inside A init
+# a1 = A()
+# a1                # --> inside A init
 
 # a1 = B()
-# a1              # --> inside B init
-# --------------------------------------------------------INharitance (3)--------------------------------------------------------------------
+# a1                # --> inside B init
+# --------------------------------------------------------Inharitance (3)----------------------------------------------
 
 # class A:
 
@@ -282,7 +283,7 @@
 # a1 = B()
 # a1              # --> inside B init
 
-# # --------------------------------------------------------INharitance (4) super --------------------------------------------------------------------
+# # --------------------------------------------------------Inharitance (4) super -------------------------------------
 
 # class A:
 
@@ -302,7 +303,7 @@
 # a1 = B()
 # a1              # --> inside A init inside B init
 
-# --------------------------------------------------------INharitance (4) super --------------------------------------------------------------------
+# --------------------------------------------------------Inharitance (4) super --------------------------------------
 
 # class A:
 
@@ -323,7 +324,7 @@
 # a1 = C()
 # a1              # --> inside A init inside B init
 
-# --------------------------------------------------------INharitance (6) --------------------------------------------------------------------
+# --------------------------------------------------------Inharitance (6) ---------------------------------------------
 
 # class A:
 
@@ -349,7 +350,7 @@
 # a1 = C()
 # a1.feature1()              # --> feature 1-A working
 
-# --------------------------------------------------------INharitance (7) super --------------------------------------------------------------------
+# --------------------------------------------------------Inharitance (7) super ---------------------------------------
 
 # class A:
 
@@ -358,7 +359,7 @@
 #     def feature1(self):
 #         print("feature 1-A working")
 
-# class B:  
+# class B:
 
 #     def __init__(self):
 #         super().__init__()              #  you can access all the features of the parent class
@@ -376,15 +377,15 @@
 #     def feat(self):
 #         super().feature2()
 # a1 = C()
-# a1.feat()                       # --> feature 1-B working     
+# a1.feat()                       # --> feature 1-B working
 
-# -------------------------------------------------------- Polymorphisim --------------------------------------------------------------------
+# -------------------------------------------------------- Polymorphisim ----------------------------------------------
 # Duck typing
 # Operator overloding
 # Method Overloading
 # Method Overridding
 
-# # -------------------------------------------------------- Duck typing --------------------------------------------------------------------
+# # -------------------------------------------------------- Duck typing ----------------------------------------------
 # class VSC:
 
 #     def execute(self):
@@ -400,7 +401,7 @@
 # lap1 = Laptop()
 # lap1.code(ide)
 
-# -------------------------------------------------------- Duck typing (2) --------------------------------------------------------------------
+# -------------------------------------------------------- Duck typing (2) --------------------------------------------
 # class VSC:
 
 #     def execute(self):
@@ -423,7 +424,7 @@
 # lap1 = Laptop()
 # lap1.code(ide)
 
-# -------------------------------------------------------- Operator overloding --------------------------------------------------------------------
+# -------------------------------------------------------- Operator overloding ----------------------------------------
 # a = 4
 # b = 2
 
@@ -434,8 +435,9 @@
 # b = '2'
 
 # print(a+b)
-# print(str.__add__(a,b)) # that moment you add a plus operator it calls the __add__ method the moment you put a minus operator it will call a __sub__
-                        # method the moment you use a star simple which is multiplication it will call __mult__ method so we have different methods
+# print(str.__add__(a,b)) # that moment you add a plus operator it calls the __add__ method the moment you put a minus
+# operator it will call a __sub__ method the moment you use a star simple which is multiplication it will call __mult__
+# method so we have different methods
 
 # class Student:
 #     def __init__(self,m1,m2):
@@ -460,7 +462,7 @@
 # print(s3)               # actually we ar using __str__ method <__main__.Student object at 0x109067610>
 # print(s1.__str__())       # --> <__main__.Student object at 0x109067610>
 
-# -------------------------------------------------------- Operator overloding (1) --------------------------------------------------------------------
+# -------------------------------------------------------- Operator overloding (1) -----------------------------------
 
 # class Student:
 
@@ -475,11 +477,11 @@
 
 # print(s1.sum(4,5))
 
-# -------------------------------------------------------- Operator overloding (2) --------------------------------------------------------------------
+# -------------------------------------------------------- Operator overloding (2) ----------------------------------
 
 # class Student:
 
-#     def __init__(self):
+#     def __init__(self)
 #         pass
 
 #     def sum(self,a=None,b=None,c=None):
@@ -496,7 +498,7 @@
 
 # print(s1.sum(4))
 
-# -------------------------------------------------------- Operator overidding --------------------------------------------------------------------
+# -------------------------------------------------------- Operator overidding (3) ------------------------------------
 
 # class A:
 #     def show(self):
@@ -511,6 +513,7 @@
 # a1 = B()
 # a1.show()  # --> AttributeError: 'B' object has no attribute 'show'
 
+# -------------------------------------------------------- Operator overidding (4) ------------------------------------
 # class A:
 #     def show(self):
 #         print("in A show")
@@ -526,6 +529,9 @@
 # class B:
 #     def show(self):
 #         print("in B show")
-#
+
 # a1 = B()
 # a1.show() # --> in B show
+
+
+

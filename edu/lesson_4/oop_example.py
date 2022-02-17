@@ -65,7 +65,7 @@
 # item1.name = "Phone"
 # item1.price = 100
 # item1.quantity = 5
-# # item1.calculate_total_price() # --> TypeError: Item.calculate_total_price() takes 0 positional arguments but 1 was given
+#item1.calculate_total_price() # TypeError: Item.calculate_total_price() takes 0 positional arguments but 1 was given
 # print(item1.calculate_total_price(item1.price,item1.quantity))
 
 # item2 = Item()
@@ -145,8 +145,10 @@
 
 # item2 = Item("Laptop",1000,3) # adding atributes 
 
-# print(f"For the first item {item1.name}, the price is {item1.price} with the quantity of {item1.quantity}") # assigning to the atributes of item 1 dynamically
-# print(f"For the second item {item2.name}, the price is {item2.price} with the quantity of {item2.quantity}") # assigning to the atributes of item 1 dynamically
+# print(f"For the first item {item1.name}, the price is {item1.price} with the quantity of {item1.quantity}")
+# assigning to the atributes of item 1 dynamically
+# print(f"For the second item {item2.name}, the price is {item2.price} with the quantity of {item2.quantity}")
+# assigning to the atributes of item 1 dynamically
 
 #---------------------------------#  Clases, Assigning default value to <price> and <quantity>
 # class Item:
@@ -160,8 +162,10 @@
 
 # item2 = Item("Laptop",1000) # adding atributes 
 
-# print(f"For the first item {item1.name}, the price is {item1.price} with the quantity of {item1.quantity}") # assigning to the atributes of item 1 dynamically
-# print(f"For the second item {item2.name}, the price is {item2.price} with the quantity of {item2.quantity}") # assigning to the atributes of item 1 dynamically
+# print(f"For the first item {item1.name}, the price is {item1.price} with the quantity of {item1.quantity}")
+# assigning to the atributes of item 1 dynamically
+# print(f"For the second item {item2.name}, the price is {item2.price} with the quantity of {item2.quantity}")
+# assigning to the atributes of item 1 dynamically
 
 
 
@@ -182,7 +186,7 @@
 
 #---------------------------------# Putting type expectation (restriction)
 # class Item:
-    # def __init__(self,name: str,price: float, quantity=0): #                                                          <--<
+    # def __init__(self,name: str,price: float, quantity=0): #                                                     <--<
 #         self.name = name 
 #         self.price = price
 #         self.quantity = quantity
@@ -198,7 +202,7 @@
 #---------------------------------# Run validations to the received arguments
 # class Item:
 #     def __init__(self,name: str,price: float, quantity=0):
-#                                                                                       # Run validations to the received arguments
+#                                                                           # Run validations to the received arguments
 #         assert price >= 0, f"Price {price} is not greater than or equal to zero!"
 #         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
         
@@ -235,8 +239,8 @@
 # item1.apply_discount()
 # print(item1.price)
 
-# # print(Item.pay_rate)                                                          # accessing class atribute (class level)
-# # print(item1.pay_rate)                                                           # accessing class variable thought instanse
+# # print(Item.pay_rate)                                                    # accessing class atribute (class level)
+# # print(item1.pay_rate)                                                  # accessing class variable thought instanse
 
 #---------------------------------# Applying different discount method to utem2 instance
 # class Item:
@@ -251,15 +255,15 @@
 #         return self.price * self.quantity
 
 #     def apply_discount (self):                                              #Creating discount method
-#         # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
-#         self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+#         # self.price = self.price * Item.pay_rate                     # we are getting same discount because of this
+#         self.price = self.price * self.pay_rate                        # after changing this line everything works ok
 
 # item1 = Item(1,100,5) # adding atributes 
 # item1.apply_discount()
 # print(item1.price)
 
 # item2 = Item("Laptop",1000,3) # adding atributes                            
-# item2.pay_rate = 0.7                                                          # # Applying different discount method to utem2 instance 
+# item2.pay_rate = 0.7                                        # # Applying different discount method to utem2 instance
 # item2.apply_discount()
 # print(item2.price)
 
@@ -280,11 +284,11 @@
 #         return self.price * self.quantity
 
 #     def apply_discount (self):                                              #Creating discount method
-#         # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
-#         self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+#         # self.price = self.price * Item.pay_rate                     # we are getting same discount because of this
+#         self.price = self.price * self.pay_rate                        # after changing this line everything works ok
 #                                                                             # Adding new instances 
 #     def __repr__(self):
-#         return f"Item('{self.name}', {self.price}, {self.quantity})"        #Outputing elelments in the list of instances 
+#         return f"Item('{self.name}', {self.price}, {self.quantity})"    #Outputing elelments in the list of instances
     
 # item1 = Item("Phone", 100, 1)
 # item2 = Item("Laptop", 1000, 3)
@@ -295,7 +299,7 @@
 # print(Item.all)
 
 #---------------------------------# Creating instances in a CSV file
-# import csv                                                                  # in order to use csv file we need to import csv library 
+# import csv                                                  # in order to use csv file we need to import csv library
 # class Item:
 #     all = []                                                                # creating list for all instances
 #     pay_rate = 0.8                                                          
@@ -312,12 +316,12 @@
 #         return self.price * self.quantity
 
 #     def apply_discount (self):                                              #Creating discount method
-#         # self.price = self.price * Item.pay_rate                             # we are getting same discount because of this 
-#         self.price = self.price * self.pay_rate                                 # after changing this line everything works ok
+#         # self.price = self.price * Item.pay_rate                     # we are getting same discount because of this
+#         self.price = self.price * self.pay_rate                       # after changing this line everything works ok
 #                                                                             # Adding new instances 
 #     @classmethod
 #     def instantiate_form_csv(cls):                              #creating methos to open and read from csv file
-#         with open('items.csv', 'r') as f:                           # openning csv file with read mode and saving data to the <f> file
+#         with open('items.csv', 'r') as f:         # openning csv file with read mode and saving data to the <f> file
 #             reader = csv.DictReader(f)                                  # openning csv file in dictionary 
 #             items = list(reader) 
 
@@ -326,7 +330,7 @@
 #             print(item)
 
 #     def __repr__(self):
-#         return f"Item('{self.name}', {self.price}, {self.quantity})"        #Outputing elelments in the list of instances 
+#         return f"Item('{self.name}', {self.price}, {self.quantity})"   #Outputing elelments in the list of instances
     
 # Item.instantiate_form_csv()
 
