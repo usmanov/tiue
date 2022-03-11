@@ -37,7 +37,7 @@ import random
 #         print("мяу")
 #     def __str__(self):
 #         return "cat:"+str(self.name)+":"+str(self.age)
-#
+
 # print("\n---- тест класса кошка ----")
 # c = Cat(5)
 # c.set_name("пушистый")
@@ -101,7 +101,7 @@ import random
 #             print("я должен поесть")
 #         else:
 #             print("я смотрю телевизор")
-#
+# # #
 # print("\n---- тест студента ----")
 # s1 = Student('Сарвар', 20, "разработка программного обеспечения")
 # s2 = Student('Усман', 18)

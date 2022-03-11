@@ -1,44 +1,40 @@
 from logo import logo
 from os import system, name
-print(logo)
+
 def clear():
-     # for windows
-    if name == 'nt':
-        _ = system('cls')
-    # for mac and linux(here, os.name is 'posix')
-    else:
-        _ = system('clear')
-  
+    # for windows
+    # if name == 'nt':
+    #     _ = system('cls')
+    # # for mac or linux
+    # else:
+    _= system('clear')
+
+print(logo)
 
 bids = {}
-
 def add_bidder():
-    name = input("What is your name?: ")
-    bid = int(input("What is your bid?: "))
+    name = input("Ваше имя:")
+    bid = int(input("Ваша ставка:"))
     bids[name] = bid
 
-def get_winner(bidding_record):
-    max_bid = 0 
-    for bidder in bidding_record:
-        bid_amount = bidding_record[bidder]
-        if bid_amount > max_bid:
-            max_bid = bid_amount
+def get_winner(bids):
+    max_bid = 0
+    for bidder in bids:
+        bid_amount = bids[bidder]
+        if bids[bidder] > max_bid:
+            max_bid = bids[bidder]
             winner = bidder
-    print(f"The winner is {winner} with a bid of ${max_bid}")
+    print(f"Победитель {winner}  со ставкой {max_bid}")
 
-new_bid = True # is there any new bid, cheking
-while new_bid: #while there new bid, repeat taking new bid
-    add_bidder()  # saving to the disctionarry new bidder details 
-    answer = input("Are there any other bidders? Type 'yes' or 'no'.")
-    if answer == "no":
+new_bid = True
+while new_bid:
+    add_bidder()
+    answer = input("Есть ли кроме Вас еще покупатель?, 'Да' или 'Нет'")
+    if answer == 'Нет':
         new_bid = False
         get_winner(bids)
-    elif answer == "yes":
-        clear()
+    if answer == 'Да':
+        # clear()
+        # add_bidder()
 
-
-
-
-
-# print(bids)
-
+print(bids)
