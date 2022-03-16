@@ -11,3 +11,4 @@ from quiz_brain import QuizBrain
 #  Создать переменную question_text с текстом вопроса,
 #  и question_answer  с текстом ответа. Создать переменную new_question для созхранения текста и ответа на вопрос.
 #  Добавить каждый объект Question в question_bank.
+
